@@ -6,16 +6,36 @@ function atualizarContador() {
 
     let diferenca = agora - inicioNamoro;
 
-    const segundos = Math.floor(diferenca / 1000) % 60;
-    const minutos = Math.floor(diferenca / (1000 * 60)) % 60;
-    const horas = Math.floor(diferenca / (1000 * 60 * 60)) % 24;
-    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+   const segundos = Math.floor(diferenca / 1000) % 60;
+const minutos = Math.floor(diferenca / (1000 * 60)) % 60;
+const horas = Math.floor(diferenca / (1000 * 60 * 60)) % 24;
 
-    document.getElementById("tempo").innerHTML =
-        `${dias} dias<br>
-        ${horas} horas<br>
-        ${minutos} minutos<br>
-        ${segundos} segundos`;
+let meses = (agora.getFullYear() - inicioNamoro.getFullYear()) * 12;
+meses += agora.getMonth() - inicioNamoro.getMonth();
+
+let aniversarioMes = new Date(inicioNamoro);
+aniversarioMes.setMonth(inicioNamoro.getMonth() + meses);
+
+if (agora < aniversarioMes) {
+    meses--;
+
+    aniversarioMes = new Date(inicioNamoro);
+    aniversarioMes.setMonth(inicioNamoro.getMonth() + meses);
+}
+
+const dias = Math.floor(
+    (agora - aniversarioMes) /
+    (1000 * 60 * 60 * 24)
+);
+
+document.getElementById("tempo").innerHTML =
+`
+❤️ ${meses} meses ❤️<br>
+📅 ${dias} dias<br>
+⏰ ${horas} horas<br>
+🕒 ${minutos} minutos<br>
+⚡ ${segundos} segundos
+`;
 }
 
 setInterval(atualizarContador, 1000);
@@ -41,3 +61,51 @@ function criarCoracao() {
 }
 
 setInterval(criarCoracao, 300);
+
+const stars = document.querySelector(".stars");
+
+for(let i = 0; i < 100; i++){
+
+    const star = document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    stars.appendChild(star);
+}
+
+const botao = document.getElementById("botaoSecreto");
+const mensagem = document.getElementById("mensagemSecreta");
+
+botao.addEventListener("click", () => {
+
+    if(mensagem.style.display === "block"){
+        mensagem.style.display = "none";
+    }else{
+        mensagem.style.display = "block";
+    }
+
+});
+
+const posts = document.querySelectorAll(".post");
+
+const observador = new IntersectionObserver((entradas) => {
+
+    entradas.forEach((entrada) => {
+
+        if(entrada.isIntersecting){
+            entrada.target.classList.add("aparecer");
+        }
+
+    });
+
+});
+
+posts.forEach((post) => {
+    observador.observe(post);
+});
