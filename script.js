@@ -64,7 +64,7 @@ setInterval(criarCoracao, 300);
 
 const stars = document.querySelector(".stars");
 
-for(let i = 0; i < 100; i++){
+for(let i = 0; i < 180; i++){
 
     const star = document.createElement("div");
 
@@ -108,4 +108,112 @@ const observador = new IntersectionObserver((entradas) => {
 
 posts.forEach((post) => {
     observador.observe(post);
+});
+
+const lightbox = document.getElementById("lightbox");
+const imagemExpandida = document.getElementById("imagemExpandida");
+const fechar = document.getElementById("fechar");
+
+document.querySelectorAll(".post img").forEach((foto)=>{
+
+    foto.addEventListener("click",()=>{
+
+        imagemExpandida.src = foto.src;
+
+        lightbox.style.display = "flex";
+
+    });
+
+});
+
+fechar.addEventListener("click",()=>{
+
+    lightbox.style.display = "none";
+
+});
+
+lightbox.addEventListener("click",(e)=>{
+
+    if(e.target === lightbox){
+
+        lightbox.style.display = "none";
+
+    }
+
+});
+
+console.log(document.querySelectorAll(".post img").length);
+console.log(lightbox);
+console.log(imagemExpandida);
+console.log(fechar);
+
+const telaInicial = document.getElementById("telaInicial");
+const entrar = document.getElementById("entrar");
+
+entrar.addEventListener("click",()=>{
+
+    telaInicial.style.opacity="0";
+
+    setTimeout(()=>{
+
+        telaInicial.style.display="none";
+
+    },1000);
+
+});
+
+document.addEventListener("mousemove",(e)=>{
+
+    criarCoracao(e.clientX,e.clientY);
+
+});
+
+document.addEventListener("touchstart",(e)=>{
+
+    const toque = e.touches[0];
+
+    criarCoracao(toque.clientX,toque.clientY);
+
+});
+
+function criarCoracao(x,y){
+
+    const coracao = document.createElement("div");
+
+    coracao.className="coracaoMouse";
+
+    coracao.innerHTML="❤️";
+
+    coracao.style.left=x+"px";
+    coracao.style.top=y+"px";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(()=>{
+
+        coracao.remove();
+
+    },1200);
+
+}
+
+const musica = document.getElementById("musica");
+const btnMusica = document.getElementById("btnMusica");
+
+btnMusica.addEventListener("click",()=>{
+
+    if(musica.paused){
+
+        musica.play();
+
+        btnMusica.innerHTML="⏸️ Pausar música";
+
+    }else{
+
+        musica.pause();
+
+        btnMusica.innerHTML="▶️ Tocar nossa música";
+
+    }
+
 });

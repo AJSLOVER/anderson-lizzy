@@ -8,7 +8,28 @@
 </head>
 <body>
 
+<div id="telaInicial">
+
+    <h1>❤️ Bem-vinda, nenê ❤️</h1>
+
+    <p>
+        Fiz esse pequeno cantinho com muito carinho.<br>
+        Espero que cada detalhe consiga arrancar um sorriso seu. 💖
+    </p>
+
+    <button id="entrar">
+        Entrar ❤️
+    </button>
+
+</div>
+
     <div class="stars"></div>
+
+    <div class="lua"></div>
+
+    <div class="nuvem nuvem1"></div>
+<div class="nuvem nuvem2"></div>
+<div class="nuvem nuvem3"></div>
 
     <div class="hearts"></div>
 
@@ -18,9 +39,18 @@
 <h3>Desde 11 de abril de 2026 às 03:00</h3>
 
         <div class="fotos">
-            <img src="imagens/eu.jpg" alt="Minha Foto">
-            <img src="imagens/ela.jpg" alt="Foto Dela">
-        </div>
+
+    <img src="imagens/eu.jpg" alt="Minha Foto">
+
+    <div class="ligacao">
+        <div class="linha"></div>
+        <div class="coracaoCentro">❤️</div>
+        <div class="linha"></div>
+    </div>
+
+    <img src="imagens/ela.jpg" alt="Foto Dela">
+
+</div>
 
         <div class="contador">
             <h2>Estamos juntos há:</h2>
@@ -63,14 +93,22 @@
     <p>🥰 Horas e horas em ligação kkkkkkk 🥰</p>
 </div>
 
-        <audio controls autoplay loop>
-            <source src="musica.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
+       <audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="player">
+    <button id="btnMusica">▶️ Tocar nossa música</button>
+</div>
 
     </div>
 
-    <script src="script.js"></script>
+    <div id="lightbox">
+    <span id="fechar">&times;</span>
+    <img id="imagemExpandida" src="" alt="">
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
