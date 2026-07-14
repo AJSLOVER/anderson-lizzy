@@ -28,7 +28,11 @@ const dias = Math.floor(
     (1000 * 60 * 60 * 24)
 );
 
-document.getElementById("tempo").innerHTML =
+document.getElementById("meses").textContent = meses;
+document.getElementById("dias").textContent = dias;
+document.getElementById("horas").textContent = horas;
+document.getElementById("minutos").textContent = minutos;
+document.getElementById("segundos").textContent = segundos;
 `
 ❤️ ${meses} meses ❤️<br>
 📅 ${dias} dias<br>
@@ -154,12 +158,13 @@ entrar.addEventListener("click",()=>{
 
     telaInicial.style.opacity="0";
 
-    setTimeout(()=>{
+  setTimeout(()=>{
 
-        telaInicial.style.display="none";
+    telaInicial.style.display="none";
 
-    },1000);
+    document.querySelector(".container").classList.add("mostrar");
 
+},1000);
 });
 
 document.addEventListener("mousemove",(e)=>{
