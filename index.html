@@ -8,159 +8,132 @@
 </head>
 <body>
 
-<div id="telaInicial">
-
-    <h1>❤️ Bem-vinda, nenê ❤️</h1>
-
-    <p>
-        Fiz esse pequeno cantinho com muito carinho.<br>
-        Espero que cada detalhe consiga arrancar um sorriso seu. 💖
-    </p>
-
-    <button id="entrar">
-        Entrar ❤️
-    </button>
-
-</div>
+    <div id="telaInicial">
+        <h1>❤️ Bem-vinda, nenê ❤️</h1>
+        <p>
+            Fiz esse pequeno cantinho com muito carinho.<br>
+            Espero que cada detalhe consiga arrancar um sorriso seu. 💖
+        </p>
+        <button id="entrar">Entrar ❤️</button>
+    </div>
 
     <div class="stars"></div>
-
     <div class="lua"></div>
-
     <div class="nuvem nuvem1"></div>
-<div class="nuvem nuvem2"></div>
-<div class="nuvem nuvem3"></div>
-
-    <div class="hearts"></div>
+    <div class="nuvem nuvem2"></div>
+    <div class="nuvem nuvem3"></div>
 
     <div class="container">
+        
+        <header class="site-header">
+            <h1>❤️ Anderson & Lizzy ❤️</h1>
+            <p class="subtitulo">Desde 11 de abril de 2026 às 03:00</p>
 
-       <h1>❤️ Anderson & Lizzy ❤️</h1>
-<h3>Desde 11 de abril de 2026 às 03:00</h3>
+            <div class="fotos-perfil">
+                <img src="imagens/eu.jpg" alt="Minha Foto" class="avatar">
+                <div class="ligacao">
+                    <div class="linha"></div>
+                    <div class="coracaoCentro">❤️</div>
+                    <div class="linha"></div>
+                </div>
+                <img src="imagens/ela.jpg" alt="Foto dela" class="avatar">
+            </div>
+        </header>
 
-        <div class="fotos">
+        <section class="secao-site">
+            <h2>Estamos juntos há</h2>
+            <div class="cardsTempo">
+                <div class="cardTempo"><span id="meses">0</span><small>Meses</small></div>
+                <div class="cardTempo"><span id="dias">0</span><small>Dias</small></div>
+                <div class="cardTempo"><span id="horas">0</span><small>Horas</small></div>
+                <div class="cardTempo"><span id="minutos">0</span><small>Minutos</small></div>
+                <div class="cardTempo"><span id="segundos">0</span><small>Segundos</small></div>
+            </div>
+        </section>
 
-    <img src="imagens/eu.jpg" alt="Minha Foto">
+        <section class="secao-site">
+            <button id="botaoSecreto">❤️ Clique aqui, nenê ❤️</button>
+            <div id="mensagemSecreta">
+                Este site foi feito para guardar um pedacinho da nossa história. Uma história construída entre mensagens, ligações, saudades e momentos especiais. Uma história que prova que o amor não depende da distância, mas do quanto duas pessoas escolhem estar presentes uma na vida da outra. E, todos os dias, eu escolho você. Eu te amo, nenê. ❤️
+            </div>
+        </section>
 
-    <div class="ligacao">
-        <div class="linha"></div>
-        <div class="coracaoCentro">❤️</div>
-        <div class="linha"></div>
-    </div>
+        <section class="secao-site">
+            <h2>Nossos Momentos ❤️</h2>
+            <div class="galeria-grid">
+                <div class="post">
+                    <div class="post-img-wrapper">
+                        <img src="imagens/foto1.jpg" alt="Momento 1">
+                    </div>
+                    <p>❤️ Nosso começo ❤️</p>
+                </div>
 
-    <img src="imagens/ela.jpg" alt="Foto Dela">
+                <div class="post">
+                    <div class="post-img-wrapper">
+                        <img src="imagens/foto2.jpg" alt="Momento 2">
+                    </div>
+                    <p>💕 Um dia inesquecível 💕</p>
+                </div>
 
-</div>
+                <div class="post">
+                    <div class="post-img-wrapper">
+                        <img src="imagens/foto3.jpg" alt="Momento 3">
+                    </div>
+                    <p>💖 Mesmo longe, sempre juntos 💖</p>
+                </div>
 
-       <div class="contador">
+                <div class="post">
+                    <div class="post-img-wrapper">
+                        <img src="imagens/foto4.jpg" alt="Momento 4">
+                    </div>
+                    <p>🥰 Horas e horas em ligação 🥰</p>
+                </div>
+            </div>
+        </section>
 
-    <h2>Estamos juntos há ❤️</h2>
+        <audio id="musica" loop>
+            <source src="musica.mp3" type="audio/mpeg">
+        </audio>
 
-    <div class="cardsTempo">
+        <section class="secao-site no-border">
+            <div class="spotify-card-player">
+                <img src="imagens/nossa-ia.jpg" alt="Nossa IA" id="capaAlbum" class="spo-card-capa">
+                
+                <div class="spo-card-info">
+                    <div class="spo-card-texto">
+                        <span class="spo-card-titulo">Nossa Música Tema ❤️</span>
+                        <span class="spo-card-artista">Anderson & Lizzy</span>
+                    </div>
+                    <span class="spo-card-heart">💚</span>
+                </div>
 
-        <div class="cardTempo">
-            <span id="meses">0</span>
-            <small>Meses</small>
-        </div>
+                <div class="spo-card-progresso-wrapper">
+                    <div class="progresso-container" id="progressoContainer">
+                        <div class="barra-progresso" id="barraProgresso"></div>
+                    </div>
+                    <div class="spo-card-tempos">
+                        <span id="tempoAtual">0:00</span>
+                        <span id="tempoTotal">0:00</span>
+                    </div>
+                </div>
 
-        <div class="cardTempo">
-            <span id="dias">0</span>
-            <small>Dias</small>
-        </div>
-
-        <div class="cardTempo">
-            <span id="horas">0</span>
-            <small>Horas</small>
-        </div>
-
-        <div class="cardTempo">
-            <span id="minutos">0</span>
-            <small>Min</small>
-        </div>
-
-        <div class="cardTempo">
-            <span id="segundos">0</span>
-            <small>Seg</small>
-        </div>
-
-    </div>
-
-</div>
-
-      <div class="mensagem">
-    <p>
-        Mesmo separados pela distância, você está presente
-        em todos os meus dias. Cada segundo ao seu lado vale
-        a pena. ❤️
-    </p>
-</div>
-
-<button id="botaoSecreto">❤️ Clique aqui, nenê ❤️</button>
-
-<div id="mensagemSecreta">
-    Este site foi feito para guardar um pedacinho da nossa história. Uma história construída entre mensagens, ligações, saudades e momentos especiais. Uma história que prova que o amor não depende da distância, mas do quanto duas pessoas escolhem estar presentes uma na vida da outra. E, todos os dias, eu escolho você. Eu te amo, nenê. ❤️
-</div>
-
-<h2>Nossos Momentos ❤️</h2>
-
-<div class="post">
-    <img src="imagens/foto1.jpg">
-    <p>❤️ Nosso começo ❤️</p>
-</div>
-
-<div class="post">
-    <img src="imagens/foto2.jpg">
-    <p>💕 Um dia inepesquecível 💕</p>
-</div>
-
-<div class="post">
-    <img src="imagens/foto3.jpg">
-    <p>💖 Mesmo longe, sempre juntos 💖</p>
-</div>
-
-<div class="post">
-    <img src="imagens/foto4.jpg">
-    <p>🥰 Horas e horas em ligação kkkkkkk 🥰</p>
-</div>
-
-       <audio id="musica" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<div class="player">
-    <button id="btnMusica">▶️ Tocar nossa música</button>
-</div>
+                <div class="spo-card-controles">
+                    <button class="spo-card-btn">🔀</button>
+                    <button class="spo-card-btn">⏮️</button>
+                    <button id="btnMusica" class="spo-card-btn-play">▶️</button>
+                    <button class="spo-card-btn">⏭️</button>
+                    <button class="spo-card-btn">🔁</button>
+                </div>
+            </div>
+        </section>
 
     </div>
 
     <div id="lightbox">
-    <span id="fechar">&times;</span>
-    <img id="imagemExpandida" src="" alt="">
+        <span id="fechar">&times;</span>
+        <img id="imagemExpandida" src="" alt="Zoom">
+    </div>
 
-    <div class="rodape">
-
-    <h2>❤️ Obrigado por chegar até aqui ❤️</h2>
-
-    <p>
-
-        Mesmo com toda a distância,
-        você consegue fazer meus dias mais felizes.
-
-        <br><br>
-
-        Espero que esse seja apenas um pequeno
-        pedacinho da nossa história.
-
-        <br><br>
-
-        Eu te amo, nenê. ❤️
-
-    </p>
-
-</div>
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
